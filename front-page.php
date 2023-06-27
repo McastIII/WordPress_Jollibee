@@ -5,7 +5,7 @@
         <div class="food__header flex justify--between align--center">
           <h2>Best Seller</h2>
           <span></span>
-          <a href="#">View All</a>
+          <a href="<?php echo site_url('/best-sellers')?>">View All</a>
         </div>
       </div>
 
@@ -41,6 +41,7 @@
                   <!-- <p><?php the_field('category')?></p> -->
                 </div>
               </div>
+              <button class="btnAddtoCart">Add to Cart</button>
             </div>
                     
             <?php endwhile;
@@ -60,7 +61,7 @@
         <div class="food__header flex justify--between align--center">
           <h2>Chicken Joy</h2>
           <span></span>
-          <a href="#">View All</a>
+          <a href="<?php echo site_url('/chicken-joy')?>">View All</a>
         </div>
       </div>
 
@@ -96,6 +97,7 @@
                   <!-- <p><?php the_field('category')?></p> -->
                 </div>
               </div>
+              <button class="btnAddtoCart">Add to Cart</button>
             </div>
 
             <?php endwhile;
@@ -116,7 +118,7 @@
         <div class="food__header flex justify--between align--center">
           <h2>Yum Burger</h2>
           <span></span>
-          <a href="#">View All</a>
+          <a href="<?php echo site_url('/yum-burger')?>">View All</a>
         </div>
       </div>
 
@@ -152,6 +154,7 @@
                   <!-- <p><?php the_field('category')?></p> -->
                 </div>
               </div>
+              <button class="btnAddtoCart">Add to Cart</button>
             </div>
 
             <?php endwhile;
@@ -171,7 +174,7 @@
         <div class="food__header flex justify--between align--center">
           <h2>Breakfast</h2>
           <span></span>
-          <a href="#">View All</a>
+          <a href="<?php echo site_url('/breakfast')?>">View All</a>
         </div>
       </div>
 
@@ -207,6 +210,7 @@
                   <!-- <p><?php the_field('category')?></p> -->
                 </div>
               </div>
+              <button class="btnAddtoCart">Add to Cart</button>
             </div>
 
             <?php endwhile;
@@ -220,6 +224,14 @@
         </div>
       </div>
     </section>
+
+    <div class="cart">
+             <h3>Cart</h3>
+             <!-- <button class="cart__close"><i class="fas fa-times"></i></button> -->
+        <div class="cart__wrapper">
+
+        </div>
+    </div>
 
 
 <?php get_footer()?>

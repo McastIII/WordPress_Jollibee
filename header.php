@@ -27,6 +27,8 @@
             
            ))
            ?>
+
+           <button class="btncart"><i class="fas fa-cart-shopping"></i><span class="count"></span></button>
           </div>
         </div>
       </div>
