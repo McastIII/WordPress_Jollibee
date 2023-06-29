@@ -19,13 +19,22 @@ const btncart = document.querySelector('.btncart');
 const cart = document.querySelector('.cart');
 const cartWrapper = cart.querySelector('.cart__wrapper');
 const counter = document.querySelector('.count');
+const total = document.querySelector('#total');
 let cartArr = []
 
 btncart.addEventListener('click',() =>{
   cart.classList.toggle('open')
+  const btnXs = document.querySelectorAll('.cartItem button');
+
+  btnXs.forEach((btn) =>{
+    btn.addEventListener('click',(e) =>{
+      e.target.parentElement.remove()
+    })
+  })
 })  
 
 const btnAddtoCarts = document.querySelectorAll('.btnAddtoCart');
+
 
 btnAddtoCarts.forEach((btn)=> {
   btn.addEventListener('click', (e)=> {
@@ -33,16 +42,24 @@ btnAddtoCarts.forEach((btn)=> {
     const cartInfo = {
       img: e.target.parentElement.querySelector('img').src,
       title: e.target.parentElement.querySelector('h4').textContent,
-      price: e.target.parentElement.querySelector('p span').textContent,
+      price: Number(e.target.parentElement.querySelector('p span').textContent),
     }
 
     cartArr.push(cartInfo)
 
+    const x =  cartArr.reduce((acc, curr)=>{
+      return (acc + curr.price);
+    }, 0)
+    
+    
+    total.innerHTML = x;
+    
     if(cartArr.length !== 0){
       counter.style.display = "flex";
       counter.textContent = cartArr.length
     }
-  
+    
+
 
     const cartItem = document.createElement('div');
     const div = document.createElement('div');
@@ -50,11 +67,13 @@ btnAddtoCarts.forEach((btn)=> {
     const img = document.createElement('img')
     const h4 = document.createElement('h4')
     const span = document.createElement('span')
+    const button = document.createElement('button')
 
     
    img.setAttribute('src', e.target.parentElement.querySelector('img').src);
    h4.innerHTML = e.target.parentElement.querySelector('h4').textContent;
    span.innerHTML = e.target.parentElement.querySelector('span').textContent;
+   button.innerText = "x";
 
    
 
@@ -62,11 +81,11 @@ btnAddtoCarts.forEach((btn)=> {
    div.appendChild(h4)
    div.appendChild(span)
    cartItem.appendChild(div)
+   cartItem.appendChild(button)
 
    cartWrapper.appendChild(cartItem)
    })
+
+   
 })
-
-
-
 

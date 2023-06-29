@@ -1,5 +1,15 @@
 <?php get_header()?>
 
+<?php if(have_posts()) : while(have_posts()) : the_post(); ?>
+    <?php the_content();?>
+<?php endwhile;
+    else :
+        echo "no more post";
+    endif;
+
+?>
+
+<!-- 
 <section class="food py--3">
       <div class="container">
         <div class="food__header flex justify--between align--center">
@@ -38,7 +48,6 @@
                 </div>
                 <div class="price">
                   <p>Start at <br /><span><?php the_field('price')?></span></p>
-                  <!-- <p><?php the_field('category')?></p> -->
                 </div>
               </div>
               <button class="btnAddtoCart">Add to Cart</button>
@@ -54,9 +63,9 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
-    <section class="food py--3">
+    <!-- <section class="food py--3">
       <div class="container">
         <div class="food__header flex justify--between align--center">
           <h2>Chicken Joy</h2>
@@ -94,7 +103,6 @@
                 </div>
                 <div class="price">
                   <p>Start at <br /><span><?php the_field('price')?></span></p>
-                  <!-- <p><?php the_field('category')?></p> -->
                 </div>
               </div>
               <button class="btnAddtoCart">Add to Cart</button>
@@ -110,10 +118,10 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
 
-    <section class="food py--3">
+    <!-- <section class="food py--3">
       <div class="container">
         <div class="food__header flex justify--between align--center">
           <h2>Yum Burger</h2>
@@ -151,7 +159,6 @@
                 </div>
                 <div class="price">
                   <p>Start at <br /><span><?php the_field('price')?></span></p>
-                  <!-- <p><?php the_field('category')?></p> -->
                 </div>
               </div>
               <button class="btnAddtoCart">Add to Cart</button>
@@ -167,9 +174,9 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
-    <section class="food py--3">
+    <!-- <section class="food py--3">
       <div class="container">
         <div class="food__header flex justify--between align--center">
           <h2>Breakfast</h2>
@@ -207,7 +214,6 @@
                 </div>
                 <div class="price">
                   <p>Start at <br /><span><?php the_field('price')?></span></p>
-                  <!-- <p><?php the_field('category')?></p> -->
                 </div>
               </div>
               <button class="btnAddtoCart">Add to Cart</button>
@@ -223,15 +229,21 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
-    <div class="cart">
-             <h3>Cart</h3>
-             <!-- <button class="cart__close"><i class="fas fa-times"></i></button> -->
+     <div class="cart">
+      <div>
+      <h3>Cart</h3>
         <div class="cart__wrapper">
-
+      </div>   
         </div>
-    </div>
+          <ul>
+            <li>Total</li>
+            <li id="total"></li>
+          </ul>
+
+        
+    </div> 
 
 
 <?php get_footer()?>
